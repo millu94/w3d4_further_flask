@@ -3,13 +3,13 @@
         {% block content %}
         <h1>My Todo List!</h1>
 
-        <form action="/tasks" method="POST"></form>
+        <form action="/tasks" method="POST">
         <label for="title">Title</label>
         <input type="text" name="title" id="title">
         <label for="description">Description</label>
         <textarea name="description" cols="30" rows="2"></textarea>
         <input type="submit" value="Add Task">
-
+        </form>
         {% for task in tasks %}  
         <div>
           <p>
