@@ -1,10 +1,20 @@
-<html>
-    <header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/events_design.css">
+    <title>Document</title>
+</head>
+<body>
+    <header id="header">
         <h1>
             Events Scotland
         </h1>
     </header>
-        <form action="/">
+  <div id="form">
+    <form action="/" method="POST">
         <label for="date">Date</label>
         <input type="text" name="date" id="date">
         <label for="name_of_event">Name Of Event</label>
@@ -14,13 +24,22 @@
         <label for="room_location">Room Location</label>
         <input type="text" name="room_location" id="room_location">
         <label for="description">Description</label>
+        <input type="text" name="description" id="description">
         <input type="submit" value="Add Event">
     </form>
+  </div>
     {% for event in events %}
-    <div>
+    <div  id="list_of_events">
         <p>
             {{ event.date }},  {{ event.name_of_event }},  {{ event.number_of_guests }},  {{ event.room_location }},  {{ event.description }}
+            {% if event.recurring_event %}
+            <span>🎉</span>
+            {% endif %}
         </p>
     </div>
-    {% endfor %}
+    {% endfor %}   
+</body>
 </html>
+
+
+
